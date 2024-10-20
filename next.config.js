@@ -1,6 +1,9 @@
-module.exports = {
+const nextConfig = {
   images: {
     domains: ['www.notion.so', 'lh5.googleusercontent.com', 's3-us-west-2.amazonaws.com'],
-  }，
-  output:'export'
+  },
+  output: 'export',
+  distDir: 'dist'
 }
+ 
+module.exports = nextConfig
