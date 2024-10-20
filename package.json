@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build && rimraf ./.next/cache/*.*",
+    "build": "next build && rimraf .next/cache/webpack/client-production/0.pack.gz",
     "start": "next start",
     "postbuild": "next-sitemap --config next-sitemap.config.js",
     "lint": "next lint"
