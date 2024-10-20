@@ -12,7 +12,6 @@
     "build": "next build",
     "start": "next start",
     "postbuild": "next-sitemap --config next-sitemap.config.js",
-    "export": "cross-env EXPORT=true next build && next-sitemap --config next-sitemap.config.js",
     "lint": "next lint"
   },
   "dependencies": {
