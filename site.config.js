@@ -47,6 +47,12 @@ const CONFIG = {
       siteVerification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",
     },
   },
+  crisp: {
+    enable: true,
+    config: {
+      CRISP_WEBSITE_ID: "6c078f6c-7060-473b-ab40-639c0817c1cb",
+    },
+  },
   naverSearchAdvisor: {
     enable: false,
     config: {
