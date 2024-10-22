@@ -19,21 +19,7 @@ const Scripts: React.FC = () => (
       </>
     )}
 
-    {CONFIG?.crisp?.enable === true && (
-      <>
-        <Script>
-        {`window.$crisp = [];
-        window.CRISP_WEBSITE_ID = "6c078f6c-7060-473b-ab40-639c0817c1cb";
-        (function() {
-           d = document;
-          s = d.createElement("script");
-          s.src = "https://client.crisp.chat/l.js";
-          s.async = true;
-          d.getElementsByTagName("head")[0].appendChild(s);
-        })();`}
-        </Script>
-      </>
-    )}
+    
   </>
 )
 
