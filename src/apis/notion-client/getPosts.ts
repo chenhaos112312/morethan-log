@@ -36,6 +36,34 @@ export const getPosts = async () => {
     for (let i = 0; i < pageIds.length; i++) {
       const id = pageIds[i]
       const properties = (await getPageProperties(id, block, schema)) || null
+      if(properties['标题']){
+        properties['title'] = properties['标题']
+      }
+      if(properties['短链']){
+        properties['slug'] = properties['短链']
+      }
+      if(properties['状态']){
+        properties['status'] = properties['状态']
+      }
+      if(properties['类型']){
+        properties['type'] = properties['类型']
+      }
+      if(properties['类别']){
+        properties['category'] = properties['类别']
+      }
+      if(properties['标签']){
+        properties['tags'] = properties['标签']
+      }
+      if(properties['摘要']){
+        properties['summary'] = properties['摘要']
+      }
+      if(properties['缩图']){
+        properties.thumbnail = properties['缩图']
+      }
+      properties.date = {};
+      properties.date['start_date'] = new Date(
+        block[id].value?.last_edited_time
+      ).toString()
       // Add fullwidth, createdtime to properties
       properties.createdTime = new Date(
         block[id].value?.created_time
