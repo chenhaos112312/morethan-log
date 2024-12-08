@@ -36,7 +36,9 @@ export const getPosts = async () => {
     for (let i = 0; i < pageIds.length; i++) {
       const id = pageIds[i]
       const properties = (await getPageProperties(id, block, schema)) || null
-     
+      if(properties['随机访问外链']){
+        CONFIG.randamAccessUrls.push(properties["随机访问外链"])
+      }
       if(properties['标题']){
         properties['title'] = properties['标题']
       }
