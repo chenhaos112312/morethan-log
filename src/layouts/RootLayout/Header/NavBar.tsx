@@ -1,6 +1,6 @@
 import styled from "@emotion/styled"
 import Link from "next/link"
-import { CONFIG } from "site.config"
+import { randamAccessUrls} from "src/custom"
 
 
 const NavBar: React.FC = () => {
@@ -15,7 +15,7 @@ const NavBar: React.FC = () => {
           </li>
         ))}
       </ul>
-      <a onClick={()=>{let accIndex =  Math.floor(Math.random() * (CONFIG.randamAccessUrls.length - 0 + 1)) + 0;window.location.href = CONFIG.randamAccessUrls[accIndex]}} >RandamAccess</a>
+      <a onClick={()=>{let accIndex =  Math.floor(Math.random() * (randamAccessUrls.length - 0 + 1)) + 0;window.location.href = randamAccessUrls[accIndex]}} >RandamAccess</a>
     </StyledWrapper>
   )
 }
