@@ -5,6 +5,7 @@ import { idToUuid } from "notion-utils"
 import getAllPageIds from "src/libs/utils/notion/getAllPageIds"
 import getPageProperties from "src/libs/utils/notion/getPageProperties"
 import { TPosts } from "src/types"
+import { randamAccessUrls} from "src/custom"
 
 /**
  * @param {{ includePages: boolean }} - false: posts only / true: include pages
@@ -60,6 +61,9 @@ export const getPosts = async () => {
       }
       if(properties['缩图']){
         properties.thumbnail = properties['缩图']
+      }
+      if(properties["随机访问外链"]){
+        randamAccessUrls.push(properties["随机访问外链"])
       }
       properties.date = {};
       properties.date['start_date'] = new Date(
