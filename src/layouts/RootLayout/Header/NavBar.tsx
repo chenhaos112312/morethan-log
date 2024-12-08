@@ -1,8 +1,11 @@
 import styled from "@emotion/styled"
 import Link from "next/link"
+import { CONFIG } from "site.config"
+
 
 const NavBar: React.FC = () => {
   const links = [{ id: 1, name: "About", to: "/about" }]
+  {/* 生成min~max之间的随机数：const randomInteger = Math.floor(Math.random() * (max - min + 1)) + min; */}
   return (
     <StyledWrapper className="">
       <ul>
@@ -12,6 +15,7 @@ const NavBar: React.FC = () => {
           </li>
         ))}
       </ul>
+      <a onClick={()=>{let accIndex =  Math.floor(Math.random() * (CONFIG.randamAccessUrls.length - 0 + 1)) + 0;window.location.href = CONFIG.randamAccessUrls[accIndex]}} >RandamAccess</a>
     </StyledWrapper>
   )
 }
@@ -28,5 +32,8 @@ const StyledWrapper = styled.div`
       margin-left: 1rem;
       color: ${({ theme }) => theme.colors.gray11};
     }
+  }
+  a{   
+    margin-left: 1rem;
   }
 `
