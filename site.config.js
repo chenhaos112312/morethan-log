@@ -33,6 +33,8 @@ const CONFIG = {
   notionConfig: {
     pageId: process.env.NOTION_PAGE_ID,
   },
+  randamAccessUrls: [
+  ],
 
   // plugin configuration (optional)
   googleAnalytics: {
